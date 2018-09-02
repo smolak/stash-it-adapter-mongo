@@ -1,0 +1,55 @@
+{
+  "name": "stash-it-adapter-mongo",
+  "version": "0.0.1",
+  "description": "MongoDB adapter for stash-it",
+  "author": "Jacek Smolak <jacek.smolak@gmail.com>",
+  "main": "build/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smolak/stash-it-adapter-mongo.git"
+  },
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "lint": "eslint --ext '.js' --ext '.md' --cache ./src",
+    "lint:fix": "eslint --ext '.js' --ext '.md' --cache --fix ./src",
+    "prepare": "NODE_ENV=production babel src --out-dir build",
+    "test": "NODE_ENV=test nyc npm run test:unit && nyc check-coverage",
+    "test:unit": "NODE_ENV=test mocha $(find src test -path '*.test.js') --opts test/unit/mocha.opts",
+    "test:file": "NODE_ENV=test mocha --opts test/unit/mocha.opts --reporter spec -w "
+  },
+  "keywords": [
+    "cache",
+    "adapter",
+    "mongo",
+    "mongodb",
+    "stash-it"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smolak/stash-it-adapter-mongo/issues"
+  },
+  "homepage": "https://github.com/smolak/stash-it-adapter-mongo#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-plugin-istanbul": "^5.0.1",
+    "chai": "^4.1.2",
+    "eslint": "^5.5.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-markdown": "^1.0.0-beta.8",
+    "eslint-plugin-mocha": "^5.2.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.0.1",
+    "sinon": "^6.1.5",
+    "sinon-chai": "^3.2.0",
+    "stash-it": "^3.0.0",
+    "stash-it-test-helpers": "^1.8.0"
+  },
+  "peerDependencies": {
+    "stash-it": "^3.0.0"
+  }
+}
