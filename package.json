@@ -1,6 +1,6 @@
 {
   "name": "stash-it-adapter-mongo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "MongoDB adapter for stash-it",
   "author": "Jacek Smolak <jacek.smolak@gmail.com>",
   "main": "build/index.js",
